@@ -18,7 +18,7 @@ def geometry_function():
     num_random_points = 300
     [verts.append(rnd_coords()) for i in range(num_random_points)]
     
-    print(verts)
+    #print(verts)
     
     edges = []
     faces = []
