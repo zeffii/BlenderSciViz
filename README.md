@@ -11,7 +11,7 @@ examples as a foundation for maximum customization by those willing to learn.
 
 **scatter plots**
 - 1d array to point cloud, takes array of {x,y,z} tuples and generates vertices
-- 1d array to point cloud, takes array of {x,y,z,c} tuples and generates colored dots
+- 1d array to point cloud, takes array of {x,y,z,c} tuples and generates colored dots (renderable geometry)
 
 **mesh plot**
 - 2d array to 3d mesh, takes n*n array of {x,y,z} tuples and generates a mesh
