@@ -13,6 +13,7 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 
 **Scatter plots**
 - [1d array to point cloud](https://github.com/zeffii/BlenderSciViz/blob/master/point_cloud_verts_only.py), takes array of `(x,y,z)` tuples and generates vertices (non render)
+- [1d array to point cloud no color](https://github.com/zeffii/BlenderSciViz/blob/master/point_cloud_icospheres_only), takes array of `(x,y,z)` tuples and generates single color dots (small icospheres)(non render)
 - 1d array to point cloud, takes array of `((x,y,z),color)` tuples and generates colored dots (renderable)
  
 **Line plots**
