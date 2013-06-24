@@ -15,7 +15,7 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 - [1d array to point cloud](https://github.com/zeffii/BlenderSciViz/blob/master/point_cloud_verts_only.py), takes array of `(x,y,z)` tuples and generates vertices (non render)
 - [1d array to point cloud no color](https://github.com/zeffii/BlenderSciViz/blob/master/point_cloud_icospheres_only.py), takes array of `(x,y,z)` tuples and generates single color dots (small icospheres)(renderable)
 - [1d array to point cloud with colors](https://github.com/zeffii/BlenderSciViz/blob/master/point_cloud_icospheres_colors.py), takes array of `((x,y,z),(r,g,b,a))` tuples and generates colored dots (renderable)
-- [1d array to points in 3d grid (n*n*z height)[https://github.com/zeffii/BlenderSciViz/blob/master/point_cloud_3d_grid_from_1d_array.py], , takes array of `(x,y,z)` tuples and generates vertices (non render)
+- [1d array to points in 3d grid (n*n*z height)](https://github.com/zeffii/BlenderSciViz/blob/master/point_cloud_3d_grid_from_1d_array.py), takes array of `(x,y,z)` tuples and generates vertices (non render)
 
 **Line plots**
 - [1d array to polyline](https://github.com/zeffii/BlenderSciViz/blob/master/intro_script.py), takes array of `(x,y,z)` tuples and generates, edge based mesh (non render)
