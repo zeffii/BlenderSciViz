@@ -12,7 +12,7 @@ examples as a foundation for maximum customization by those willing to learn.
 These are tagged depending on if they are visible in a render or only in the 3d viewport. Where it makes sense, examples of both are given.
 
 **Scatter plots**
-- 1d array to point cloud, takes array of (x,y,z) tuples and generates vertices (non render)
+- [1d array to point cloud](https://github.com/zeffii/BlenderSciViz/blob/master/point_cloud_verts_only.py), takes array of (x,y,z) tuples and generates vertices (non render)
 - 1d array to point cloud, takes array of (x,y,z,c) tuples and generates colored dots (renderable)
  
 **Line plots**
