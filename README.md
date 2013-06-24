@@ -9,12 +9,15 @@ examples as a foundation for maximum customization by those willing to learn.
 
 ###Useful code snippets and addons
 
+These are tagged according depending on if they visible in a render or only in the 3d viewport. Scripts that are viewable 
+only in 3d viewport can be modified to produce renderable output, but in general you will find examples for both.
+
 **scatter plots**
 - 1d array to point cloud, takes array of (x,y,z) tuples and generates vertices
 - 1d array to point cloud, takes array of (x,y,z,c) tuples and generates colored dots (renderable geometry)
  
 **line plots**
-- [1d array to polyline](https://github.com/zeffii/BlenderSciViz/blob/master/intro_script.py), takes array of (x,y,z) tuples and generates, edge based mesh
+- [1d array to polyline](https://github.com/zeffii/BlenderSciViz/blob/master/intro_script.py), takes array of (x,y,z) tuples and generates, edge based mesh (non render)
 
 **3D surface plot**
 - 2d array to 3D mesh, takes n*n array of (x,y,z) tuples and generates a mesh
