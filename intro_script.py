@@ -6,7 +6,8 @@ def frange(start, end, step):
     while start < end:
         yield start
         start += step
-    
+
+# template geometry function    
 def geometry_function():
     # these three must have identical number of elements
     verts_x = [cos(x) for x in frange(0, 2*pi, pi*0.01)]
@@ -17,19 +18,22 @@ def geometry_function():
     # daisy-chain the vertices as a polyline
     verts = list(zip(verts_x, verts_y, verts_z))
     edges = [(i, i+1) for i in range(len(verts)-1)]
-    return verts, edges
-
-def make_polyline(func, polyline_name):
-    verts, edges = func()
     
-    mesh = bpy.data.meshes.new("polyline_edge_mesh")  
-    mesh.from_pydata(verts, edges, [])  
+    #faces
+    faces = []
+    return verts, edges, faces
+
+def generate(func, geometry_name):
+    verts, edges, faces = func()
+    
+    mesh = bpy.data.meshes.new(geometry_name + "_mesh")  
+    mesh.from_pydata(verts, edges, faces)  
     mesh.update() 
       
-    polyline_object = bpy.data.objects.new(polyline_name, mesh)  
+    obj = bpy.data.objects.new(geometry_name, mesh)  
       
     scene = bpy.context.scene    
-    scene.objects.link(polyline_object)    
-    polyline_object.select = True    
+    scene.objects.link(obj)    
+    obj.select = True    
     
-make_polyline(geometry_function, "Polyline_Object")
+generate(geometry_function, "Polyline_Object")
