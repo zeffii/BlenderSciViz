@@ -9,8 +9,7 @@ examples as a foundation for maximum customization by those willing to learn.
 
 ###Useful code snippets and addons
 
-These are tagged according depending on if they visible in a render or only in the 3d viewport. Scripts that are viewable 
-only in 3d viewport can be modified to produce renderable output, but in general you will find examples for both.
+These are tagged depending on if they are visible in a render or only in the 3d viewport. Where it makes sense, examples of both are given.
 
 **scatter plots**
 - 1d array to point cloud, takes array of (x,y,z) tuples and generates vertices
