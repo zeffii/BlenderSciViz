@@ -4,7 +4,7 @@ BlenderSciViz
 Preliminary code for plotting data in Blender.
 
 ###What this project hopes to achieve?  
-Creating analogues for comon plotting needs in the scientific and data comunity. 
+Creating analogues for common plotting needs in the scientific and data community. 
 
 ###TODO
 
