@@ -16,3 +16,9 @@ examples as a foundation for maximum customization by those willing to learn.
 **mesh plot**
 - 2d array to 3d mesh, takes n*n array of {x,y,z} tuples and generates a mesh
 - Automatic colour map for 3d mesh data
+
+###Todo
+
+    plt.{x,y,z}label,   
+    plt.gca, 
+    plt.plot(cos(x in range(0,2*pi, 0.01*pi)) ),
