@@ -21,7 +21,7 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 - [1d array to polyline](https://github.com/zeffii/BlenderSciViz/blob/master/intro_script.py), takes array of `(x,y,z)` tuples and generates, edge based mesh (non render)
 
 **3D surface plot**
-- [1d array to 3D mesh](https://github.com/zeffii/BlenderSciViz/blob/master/points_with_surface_from_n_by_n_grid_of_zheights.py), takes flat array of `(x,y,z)` tuples and generates a mesh (renderable)(current limitation, must be even number of verts in x and y direction)
+- [1d array to 3D mesh](https://github.com/zeffii/BlenderSciViz/blob/master/points_with_surface_from_n_by_n_grid_of_zheights.py), takes flat array of `(x,y,z)` tuples and generates a mesh (renderable) (**current limitation**, must be even number of verts in x and y direction)
 - Automatic colour map for 3d mesh data (renderable)
 
 ###Useful addons
