@@ -7,7 +7,7 @@ Preliminary code for plotting data in Blender.
 Create analogues for common plotting needs in the scientific and data community. Provide sufficiently readable 
 examples as a foundation for maximum customization by those willing to learn.
 
-###Useful code snippets and addons
+###Useful code snippets
 
 These are tagged depending on if they are visible in a render or only in the 3d viewport. Where it makes sense, examples of both are given.
 
@@ -22,6 +22,11 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 **3D surface plot**
 - 2d array to 3D mesh, takes n*n array of `(x,y,z)` tuples and generates a mesh (renderable)
 - Automatic colour map for 3d mesh data (renderable)
+
+###Useful addons
+
+- [Add Mesh / Add 3d Function Surface](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Add_Mesh/Add_3d_Function_Surface)
+
 
 ###Todo
 
