@@ -18,13 +18,10 @@ def geometry_function():
     num_random_points = 300
     [coords.append(rnd_coords()) for i in range(num_random_points)]
 
-    colors = []
-
-    return coords, colors
+    return coords
 
 def generate_objects(func, geometry_name):
-    coords, colors = func()
-    
+    coords = func()
 
     # get icosphere mesh, deleting the object doesn't delete the mesh.
     bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=2, size=0.05)
