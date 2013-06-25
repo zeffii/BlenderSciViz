@@ -10,22 +10,21 @@ def frange(start, end, step):
 
 def generate_face_keys(num_x, num_y):
     faces = []
-    for i in range(num_x*num_y):
-            
-        x = (i % num_x)
-        y = floor(i / num_x)
-        verts_per_side = num_x + 1
 
-        # only deals with equal sized dimensions x y for now
-        level = x + (y*verts_per_side)
+    for i in range((num_x-1)*(num_y-1)):
+        x = (i % (num_x-1))
+        y = floor(i / (num_x-1))
+        verts_per_side_x = num_x
+
+        level = x + (y*verts_per_side_x)
         idx1 = level
         idx2 = level + 1
-        idx3 = level + verts_per_side + 1
-        idx4 = level + verts_per_side
-
+        idx3 = level + verts_per_side_x + 1
+        idx4 = level + verts_per_side_x
+    
         faces.append([idx1, idx2, idx3, idx4])
+
     return faces
-        
 
 
 # template geometry function    
@@ -61,7 +60,7 @@ def geometry_function():
     verts = list(zip(verts_x, verts_y, verts_z))
     
     # faces, this is a little trickier
-    faces = generate_face_keys(num_x-1, num_y-1)
+    faces = generate_face_keys(num_x, num_y)
     return verts, faces
 
 def generate(func, geometry_name):
