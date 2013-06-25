@@ -10,23 +10,23 @@ def frange(start, end, step):
 
 def generate_face_keys(num_x, num_y):
     faces = []
-    for i in range(num_x*num_y):
-            
-        x = (i % num_x)
-        y = floor(i / num_x)
-        verts_per_side = num_x + 1
 
+    for i in range((num_x-1)*(num_y-1)):
+        x = (i % (num_x-1))
+        y = floor(i / (num_x-1))
+        verts_per_side_x = num_x
+        verts_per_side_y = num_y    
+    
         # only deals with equal sized dimensions x y for now
-        level = x + (y*verts_per_side)
+        level = x + (y*verts_per_side_x)
         idx1 = level
         idx2 = level + 1
-        idx3 = level + verts_per_side + 1
-        idx4 = level + verts_per_side
-
+        idx3 = level + verts_per_side_x + 1
+        idx4 = level + verts_per_side_x
+    
         faces.append([idx1, idx2, idx3, idx4])
-    return faces
-        
 
+    return faces
 
 # template geometry function    
 def geometry_function():
@@ -37,15 +37,15 @@ def geometry_function():
     def get_y(i):
         return y_limits[0] + y_offset * floor(i / num_x)
 
-    rnd_comp = lambda: random.uniform(-0.3,0.3)
+    rnd_comp = lambda: random.uniform(-0.1,0.1)
     rnd_coords = lambda: rnd_comp()
 
     x_limits = [-6, 6]
-    y_limits = [-6, 6]
+    y_limits = [-2, 2]
     x_range = max(x_limits) - min(x_limits)
     y_range = max(y_limits) - min(y_limits)
-    num_x = 50
-    num_y = 50
+    num_x = 6
+    num_y = 6
     x_offset = x_range / num_x
     y_offset = y_range / num_y
     
@@ -58,7 +58,7 @@ def geometry_function():
     verts = list(zip(verts_x, verts_y, verts_z))
     
     # faces, this is a little trickier
-    faces = generate_face_keys(num_x-1, num_y-1)
+    faces = generate_face_keys(num_x, num_y)
     return verts, faces
 
 def generate(func, geometry_name):
