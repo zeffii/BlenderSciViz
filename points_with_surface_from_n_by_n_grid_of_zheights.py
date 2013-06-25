@@ -15,9 +15,7 @@ def generate_face_keys(num_x, num_y):
         x = (i % (num_x-1))
         y = floor(i / (num_x-1))
         verts_per_side_x = num_x
-        verts_per_side_y = num_y    
-    
-        # only deals with equal sized dimensions x y for now
+
         level = x + (y*verts_per_side_x)
         idx1 = level
         idx2 = level + 1
