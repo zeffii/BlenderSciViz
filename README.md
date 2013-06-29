@@ -28,7 +28,7 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 - Automatic colour map for 3d mesh data (renderable)
 
 **Node scripting**
-- [mini node connection grammar](https://github.com/zeffii/BlenderSciViz/blob/master/node_connection_grammar.py), simplifies connecting existing nodes. example grammar: `Node.001|Color > MixRGB.002|0`. Full grammar specs are in the file.
+- [mini node connection grammar](https://github.com/zeffii/BlenderSciViz/blob/master/node_connection_grammar.py), simplifies connecting existing nodes. example grammar: `"Node.001|Color > MixRGB.002|0"`. Full grammar specs are in the file.
 
 ###Useful addons
 
