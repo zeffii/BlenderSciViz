@@ -1,16 +1,17 @@
 import bpy
 from mathutils import Vector
 
-print('---')
-
-def bounds(obj):
+def bounds(obj, local=False):
 
     local_coords = obj.bound_box[:]
     om = obj.matrix_world
-    
-    worldify = lambda p: om * Vector(p[:]) 
-    coords = [worldify(p).to_tuple() for p in local_coords]
-    
+
+    if not local:    
+        worldify = lambda p: om * Vector(p[:]) 
+        coords = [worldify(p).to_tuple() for p in local_coords]
+    else:
+        coords = [p[:] for p in local_coords]
+        
     rotated = zip(*coords[::-1])
     
     push_axis = []
@@ -28,13 +29,14 @@ def bounds(obj):
     o_details = collections.namedtuple('object_details', 'x y z')
     return o_details(**originals)
 
-"""
+""" 
 obj = bpy.context.object
-object_details = bounds(obj)
+object_details = bounds(obj, False)
 
 a = object_details.z.max
 b = object_details.z.min
 c = object_details.z.distance
 
 print(a, b, c)
+
 """
