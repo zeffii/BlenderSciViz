@@ -5,7 +5,7 @@ Preliminary code for plotting data in Blender.
 
 ###What this project hopes to achieve?  
 Show various ways in which the Blender Python API, called `bpy`, can be used to generate meshes, shaders and vector graphics. 
-These examples are intended to help you code your own visualizations, and can be used on their own or combined.
+These examples are intended to help you code your own visualizations, and can be used on their own or as part of the `sci_viz` module.
 
 ###Useful code snippets
 
