@@ -27,6 +27,8 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 - [1d array to 3D mesh, z depends on x and y](https://github.com/zeffii/BlenderSciViz/blob/master/point_surface_z_depends_on_xy_location.py), takes flat array of `(x,y,z)` tuples and generates a mesh (renderable)
 - Automatic colour map for 3d mesh data (renderable)
 
+**Node scripting**
+- [mini node connection grammar](), simplifies connecting existing nodes. example grammar: `Node.001|Color > MixRGB.002|0`. Full grammar specs are in the file.
 
 ###Useful addons
 
