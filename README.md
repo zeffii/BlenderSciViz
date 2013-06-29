@@ -41,5 +41,5 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 
 - [Add Mesh / Add 3d Function Surface](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Add_Mesh/Add_3d_Function_Surface)
 
- [1]: (http://i.imgur.com/l8ZWAkp.png)
+  [1]: http://i.imgur.com/l8ZWAkp.png
 
