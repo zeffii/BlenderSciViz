@@ -35,8 +35,4 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 - [Add Mesh / Add 3d Function Surface](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Add_Mesh/Add_3d_Function_Surface)
 
 
-###Todo
 
-    plt.{x,y,z}label,   
-    plt.gca, 
-    plt.plot(cos(x in range(0,2*pi, 0.01*pi)) ),
