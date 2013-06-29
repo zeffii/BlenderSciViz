@@ -34,8 +34,8 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 - [bounding box tools](https://github.com/zeffii/BlenderSciViz/blob/master/obj_tools_bounding_box.py), provides `mix, max and distance` for an object, calculated in world or local coordinates
 
 **The sci_viz module**  
-The `sci_viz` module can be placed inside the blender scripts folder like `../scripts/modules/sci_viz` , it allows you to easily import that various utilities
-when you understand what they do. For example if you need to make a bunch of node links in add these lines to the top of your python script and you can use the **node mini grammar** to connect nodes.
+The `sci_viz` module can be placed inside the blender scripts folder like `../scripts/modules/sci_viz` , to conveniently import the various utilities. 
+For example if you need to make a bunch of node links in add these lines to the top of your python script and you can use the **node mini grammar** to connect nodes.
 
     import sci_viz 
     from sci_viz.node_tools import make_link
