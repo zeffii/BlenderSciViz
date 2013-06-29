@@ -30,6 +30,9 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 **Node scripting**
 - [mini node connection grammar](https://github.com/zeffii/BlenderSciViz/blob/master/node_connection_grammar.py), simplifies connecting existing nodes. example grammar: `"Node.001|Color > MixRGB.002|0"`. Full grammar specs are in the file.
 
+**general obj utility scripts**
+- [bounding box tools]() ,provides `mix, max and distance` for an object, calculated in world coordinates
+
 ###Useful addons
 
 - [Add Mesh / Add 3d Function Surface](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Add_Mesh/Add_3d_Function_Surface)
