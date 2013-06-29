@@ -31,7 +31,7 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 - [mini node connection grammar](https://github.com/zeffii/BlenderSciViz/blob/master/node_connection_grammar.py), simplifies connecting existing nodes. example grammar: `"Node.001|Color > MixRGB.002|0"`. Full grammar specs are in the file.
 
 **general obj utility scripts**
-- [bounding box tools]() ,provides `mix, max and distance` for an object, calculated in world coordinates
+- [bounding box tools](https://github.com/zeffii/BlenderSciViz/blob/master/obj_tools_bounding_box.py) ,provides `mix, max and distance` for an object, calculated in world or local coordinates
 
 ###Useful addons
 
