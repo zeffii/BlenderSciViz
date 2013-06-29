@@ -25,7 +25,7 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 
 - [1d array to 3D mesh](https://github.com/zeffii/BlenderSciViz/blob/master/points_with_surface_from_n_by_n_grid_of_zheights.py), takes flat array of `(x,y,z)` tuples and generates a mesh (renderable)
 - [1d array to 3D mesh, z depends on x and y](https://github.com/zeffii/BlenderSciViz/blob/master/point_surface_z_depends_on_xy_location.py), takes flat array of `(x,y,z)` tuples and generates a mesh (renderable)
-- Automatic colour map for 3d mesh data (renderable)
+- [Automatic height to gradient colour map for 3d mesh data](https://github.com/zeffii/BlenderSciViz/blob/master/materials_color_from_z_domain.py), takes the world or local bounds of the object and creates a shader automatically with a colour ramp (renderable)
 
 **Node scripting**
 - [mini node connection grammar](https://github.com/zeffii/BlenderSciViz/blob/master/node_connection_grammar.py), simplifies connecting existing nodes. example grammar: `"Node.001|Color > MixRGB.002|0"`. Full grammar specs are in the file.
