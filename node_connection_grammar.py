@@ -14,7 +14,7 @@ link_str:   'node_name_origin|output_socket > node_name_destination|input_socket
             if a node has several socketes with the same type (Color, or Vector for example)
             you must specify the socket using an index instead.
             
-            The only restriction here is the se of punctuation inside the string. Everything is
+            The only restriction here is the use of punctuation inside the string. Everything is
             treated as a string, if a string is a reference to an indexed socket, this gets converted
             to a proper integer value automatically.
 """
