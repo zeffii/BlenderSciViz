@@ -4,8 +4,8 @@ BlenderSciViz
 Preliminary code for plotting data in Blender.
 
 ###What this project hopes to achieve?  
-Create a collection of scripts to show various ways to use the powerful Blender python API called `bpy`. 
-These examples are intended to help you code your own visualizations based on `bpy`, and can be used on their own or can combined with eachother.
+Provide a collection of scripts to show various ways to use the Blender python API called `bpy`. 
+These examples are intended to help you code your own visualizations, and can be used on their own or combined.
 
 ###Useful code snippets
 
