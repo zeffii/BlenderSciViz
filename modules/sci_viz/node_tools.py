@@ -10,19 +10,12 @@ def make_link(mat, link_str):
     node_origin, output_socket = sockets[0].split('|')
     node_destination, input_socket = sockets[1].split('|')    
     
-    # make sure no spaces.
-    node_origin = node_origin.strip()
-    output_socket = output_socket.strip()
-    node_destination = node_destination.strip()
-    input_socket = input_socket.strip()
-    
-    # if input or output socket is an integer, cast it.
-    if output_socket.isnumeric():
-        output_socket = int(output_socket)
-    
-    if input_socket.isnumeric():
-        input_socket = int(input_socket)    
-    
+    # make sure no spaces, and cast as int if needed
+    identifiers = [node_origin, output_socket, node_destination, input_socket]
+    identifiers = [i.strip() for i in identifiers]
+    identifiers = [(int(i) if i.isnumeric() else i) for i in identifiers]
+    node_origin, output_socket, node_destination, input_socket = identifiers
+
     output = nodes[node_origin].outputs[output_socket]
     input = nodes[node_destination].inputs[input_socket]
     mat.node_tree.links.new(output, input)
