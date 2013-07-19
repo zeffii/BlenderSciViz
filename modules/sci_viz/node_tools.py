@@ -1,3 +1,24 @@
+# full runnable example https://gist.github.com/zeffii/5885538
+
+"""
+mat:        is a reference to a material  
+            ( mat = bpy.data.materials[some_material_name] )
+            it must be a :
+                - cycles material (and render engine)
+                - use_nodes = True
+
+link_str:   'node_name_origin|output_socket > node_name_destination|input_socket'
+            easier to think of this as
+            'origin > destination' each side must include a node name and a socket name or index
+            
+            if a node has several socketes with the same type (Color, or Vector for example)
+            you must specify the socket using an index instead.
+            
+            The only restriction here is the use of punctuation inside the string. Everything is
+            treated as a string, if a string is a reference to an indexed socket this gets converted
+            to a proper integer value automatically.
+"""
+
 import bpy
 
 def make_link(mat, link_str):
