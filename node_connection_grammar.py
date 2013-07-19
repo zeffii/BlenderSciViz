@@ -20,26 +20,26 @@ link_str:   'node_name_origin|output_socket > node_name_destination|input_socket
 """
 
 
+import bpy
+
 def make_link(mat, link_str):
     nodes = mat.node_tree.nodes
  
-    # strip all trailing and leading whitespaces
+    # Geometry|Position > ADD_0|0
     link_str = link_str.strip()
     sockets = link_str.split(">") 
-    elements = [socket.strip().split('|') for socket in sockets]
-    elements = [[i.strip() for i in c] for c in elements]
-    (node_origin, socket_o),(node_dest, socket_i) = elements
+    sockets = [socket.strip() for socket in sockets]
+    node_origin, output_socket = sockets[0].split('|')
+    node_destination, input_socket = sockets[1].split('|')    
     
-    # if input or output socket is an integer, cast it.
-    if socket_o.isnumeric(): socket_o = int(socket_o)
-    if socket_i.isnumeric(): socket_i = int(socket_i)
-    
-    _output = nodes[node_origin].outputs[socket_o]
-    _input = nodes[node_dest].inputs[socket_i]
-    mat.node_tree.links.new(_output, _input)
-    
-    
+    # make sure no spaces, and cast as int if needed
+    identifiers = [node_origin, output_socket, node_destination, input_socket]
+    identifiers = [i.strip() for i in identifiers]
+    identifiers = [(int(i) if i.isnumeric() else i) for i in identifiers]
+    node_origin, output_socket, node_destination, input_socket = identifiers
 
-
+    output = nodes[node_origin].outputs[output_socket]
+    input = nodes[node_destination].inputs[input_socket]
+    mat.node_tree.links.new(output, input)
 
 
