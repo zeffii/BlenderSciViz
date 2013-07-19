@@ -28,7 +28,7 @@ These are tagged depending on if they are visible in a render or only in the 3d 
 - [Automatic height to gradient colour map for 3d mesh data](https://github.com/zeffii/BlenderSciViz/blob/master/materials_color_from_z_domain.py), takes the world or local bounds of the object and creates a shader automatically with a colour ramp (renderable)
 
 **Node scripting**
-- [mini node connection grammar](https://github.com/zeffii/BlenderSciViz/blob/master/node_connection_grammar.py), simplifies connecting existing nodes. example grammar: `"Node.001|Color > MixRGB.002|0"`. Full grammar specs are in the file.
+- [mini node connection grammar](https://github.com/zeffii/BlenderSciViz/blob/master/modules/sci_viz/node_tools.py), simplifies connecting existing nodes. example grammar: `"Node.001|Color > MixRGB.002|0"`. Full grammar specs are in the file.
 
 **General obj utility scripts**
 - [bounding box tools](https://github.com/zeffii/BlenderSciViz/blob/master/obj_tools_bounding_box.py), provides `mix, max and distance` for an object, calculated in world or local coordinates
