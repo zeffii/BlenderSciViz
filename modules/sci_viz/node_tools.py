@@ -17,6 +17,18 @@ link_str:   'node_name_origin|output_socket > node_name_destination|input_socket
             The only restriction here is the use of punctuation inside the string. Everything is
             treated as a string, if a string is a reference to an indexed socket this gets converted
             to a proper integer value automatically.
+            
+            
+example use:
+            'node_name_origin|output_socket > node_name_destination|input_socket'
+            
+            'ColorRamp|Color > Diffuse BSDF|Color'
+            '0|0 > 1|0'
+            
+            Each node can be referenced by name or index, usually directly specifying the name will be
+            clearer to you later. Input and Output sockets are also named and indexed. Because a node 
+            can have several identically named sockets (like several color input sockets) you have to
+            speficy them using their index.
 """
 
 import bpy
