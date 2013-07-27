@@ -8,27 +8,36 @@ mat:        is a reference to a material
                 - use_nodes = True
 
 link_str:   'node_name_origin|output_socket > node_name_destination|input_socket'
-            easier to think of this as
-            'origin > destination' each side must include a node name/index and a socket name/index
-            
-            if a node has several socketes with the same type (Color, or Vector for example)
+            easier to think of this as 'origin > destination' each side must include:
+                - a node name/index 
+                - a socket name/index
+                        
+            If a node has several socketes with the same type (Color, or Vector for example)
             you must specify the socket using an index instead.
             
             The only restriction here is the use of punctuation inside the string. Everything is
             treated as a string, if a string is a reference to an indexed socket this gets converted
             to a proper integer value automatically.
-            
-            
-example use:
-            'node_name_origin|output_socket > node_name_destination|input_socket'
-            
+
+            For example, a link_str might look like these
             'ColorRamp|Color > Diffuse BSDF|Color'
+            'ColorRamp|0 > Diffuse BSDF|0'
             '0|0 > 1|0'
             
             Each node can be referenced by name or index, usually directly specifying the name will be
             clearer to you later. Input and Output sockets are also named and indexed. Because a node 
             can have several identically named sockets (like several color input sockets) you have to
-            speficy them using their index.
+            specify them using their index.
+
+
+example use:
+            
+            from sci_viz.node_tools import make_link
+            
+            mat = bpy.data.materials[some_material_name]
+            make_link(mat, 'ColorRamp|Color > Diffuse BSDF|Color')
+
+            
 """
 
 import bpy
@@ -36,7 +45,7 @@ import bpy
 def make_link(mat, link_str):
     nodes = mat.node_tree.nodes
  
-    # Geometry|Position > ADD_0|0
+    # split incoming link_str into nodes and sockets
     link_str = link_str.strip()
     sockets = link_str.split(">") 
     sockets = [socket.strip() for socket in sockets]
