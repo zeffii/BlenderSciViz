@@ -11,10 +11,8 @@ link_str:   'node_name_origin|output_socket > node_name_destination|input_socket
                 - a socket name/index
                         
             If a node has several socketes with the same type (Color, or Vector for example)
-            you must specify the socket using an index instead.
-            
-            Everything is treated as a string, if a string is a reference to an indexed socket 
-            this gets converted to a proper integer value automatically.
+            you must specify the socket using an index instead. The script converts indexed 
+            items to a proper integer value automatically.
 
             For example, a link_str might look like these
             'ColorRamp|Color > Diffuse BSDF|Color'
