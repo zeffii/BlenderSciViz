@@ -1,5 +1,3 @@
-# full runnable example https://gist.github.com/zeffii/5885538
-
 """
 mat:        is a reference to a material  
             ( mat = bpy.data.materials[some_material_name] )
@@ -37,7 +35,7 @@ example use:
             mat = bpy.data.materials[some_material_name]
             make_link(mat, 'ColorRamp|Color > Diffuse BSDF|Color')
 
-            
+            # full runnable example https://gist.github.com/zeffii/5885538            
 """
 
 import bpy
