@@ -15,13 +15,13 @@ link_str:   'node_name_origin|output_socket > node_name_destination|input_socket
             If a node has several socketes with the same type (Color, or Vector for example)
             you must specify the socket using an index instead.
             
-            The only restriction here is the use of punctuation inside the string. Everything is
-            treated as a string, if a string is a reference to an indexed socket this gets converted
-            to a proper integer value automatically.
+            Everything is treated as a string, if a string is a reference to an indexed socket 
+            this gets converted to a proper integer value automatically.
 
             For example, a link_str might look like these
             'ColorRamp|Color > Diffuse BSDF|Color'
             'ColorRamp|0 > Diffuse BSDF|0'
+            'ColorRamp.001|0 > Some_Renamed_Node|0'
             '0|0 > 1|0'
             
             Each node can be referenced by name or index, usually directly specifying the name will be
