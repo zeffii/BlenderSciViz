@@ -1,5 +1,6 @@
 import bpy
-from mathutils import Vector
+from mathutils import Vector, Color
+from collections import defaultdict
 
 def bounds(obj, local=False):
     """ 
@@ -41,4 +42,55 @@ def bounds(obj, local=False):
      
     o_details = collections.namedtuple('object_details', 'x y z')
     return o_details(**originals)
+
+
+def avg_col(cols):
+    avg_col = Color((0.0, 0.0, 0.0))
+    for col in cols:
+        avg_col += col/len(cols)
+    return avg_col
+
+
+class VertexColors:
+    """
+    usage: 
+    from sci_viz import obj_tools
+    vc_obj = obj_tools.VertexColors()
+
+    import pprint
+    pprint.pprint(vc_obj.vcols_avg)
+
+    input:
+    - can be passed an arbitrary mesh object, and named vertex color map, but
+      will use active_object and 'Col' if none specified.
+
+    output:
+    - vcols will output a dict of vertex indices and the colors associated with them
+    - vcols_avg will output the dict with all colors for averaged per vertex.
+    """
+
+    def __init__(self, obj=bpy.context.active_object, col='Col'):
+
+        self.tk = defaultdict(list)
+
+        mesh = obj.data
+        color_layer = mesh.vertex_colors[col]
+
+        i = 0
+        for poly in mesh.polygons:
+            for idx in poly.loop_indices:
+                loop = mesh.loops[idx]
+                color = color_layer.data[i].color
+                self.tk[loop.vertex_index].append(color)
+                i += 1
+
+    @property
+    def vcols(self):
+        return self.tk
+
+    @property
+    def vcols_avg(self):
+        return {k: avg_col(v) for k, v in self.tk.items()}
+
+
 
