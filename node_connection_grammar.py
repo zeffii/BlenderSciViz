@@ -11,7 +11,7 @@ link_str:   'node_name_origin|output_socket > node_name_destination|input_socket
             easier to think of this as
             'origin > destination' each side must include a node name and a socket name or index
             
-            if a node has several socketes with the same type (Color, or Vector for example)
+            if a node has several sockets with the same type (Color, or Vector for example)
             you must specify the socket using an index instead.
             
             The only restriction here is the use of punctuation inside the string. Everything is
