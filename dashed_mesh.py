@@ -1,4 +1,4 @@
-# for an interactive version of this code, install sverchok and use script-node 'dashed edges'
+# for an interactive version of this code, install sverchok and use script-node 'zeffii/dashed edges'
 from mathutils import Vector as V
 from math import floor
 
