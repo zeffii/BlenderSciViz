@@ -1,6 +1,23 @@
 import bpy
 from math import pi, cos
 import random
+import bmesh
+
+```
+- generate a icosphere mesh from bmesh, 
+- create a new object for each coordinate, but reusing the same mesh
+
+pro: low memory footprint (due to reuse)
+con: large quantity of Objects, means 'name collision' checking will still
+     be a slowing factor at creation time.
+
+alt: Alternativly you can make a single object using the coordinates and place
+     duplicates at each vertex. 
+        
+        See dupliverts_example.py
+
+```
+
 
 # or a numpy alternative
 def frange(start, end, step):
@@ -23,12 +40,12 @@ def geometry_function():
 def generate_objects(func, geometry_name):
     coords = func()
 
-    # get icosphere mesh, deleting the object doesn't delete the mesh.
-    bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=2, size=0.05)
-    obj = bpy.context.active_object
-    mesh = obj.data
-    mesh.name = 'SciVizIcoSphere'
-    bpy.ops.object.delete(use_global=False)
+    bm = bmesh.new()
+    bmesh.ops.create_icosphere(bm, subdivisions=2, diameter=0.05)
+    mesh = bpy.data.meshes.new('SciVizIcoSphere_mesh')
+    bm.to_mesh(mesh)
+    bm.free()
+    mesh.use_fake_user = True  # just in case
     
     # new objects, sharing icosphere mesh
     for coordinate in coords:
@@ -36,9 +53,6 @@ def generate_objects(func, geometry_name):
         obj.location = coordinate
           
         scene = bpy.context.scene    
-        scene.objects.link(obj)    
-    
+        scene.objects.link(obj)
 
-    
-    
-generate_objects(geometry_function, "PointCloud_Object")
+generate_objects(geometry_function, 'random_spheres')
