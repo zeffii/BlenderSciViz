@@ -14,7 +14,7 @@ con: large quantity of Objects, means 'name collision' checking will still
 alt: Alternativly you can make a single object using the coordinates and place
      duplicates at each vertex. 
         
-        See dupliverts_example.py
+        See point_cloud_dupliverts.py
 
 '''
 
