@@ -3,7 +3,7 @@ from math import pi, cos
 import random
 import bmesh
 
-```
+'''
 - generate a icosphere mesh from bmesh, 
 - create a new object for each coordinate, but reusing the same mesh
 
@@ -16,7 +16,7 @@ alt: Alternativly you can make a single object using the coordinates and place
         
         See dupliverts_example.py
 
-```
+'''
 
 
 # or a numpy alternative
