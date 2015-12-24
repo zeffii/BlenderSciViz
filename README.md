@@ -39,9 +39,13 @@ For example if you need to make a series of node links then add these lines to t
 
     import sci_viz 
     from sci_viz.node_tools import make_link
-    
 
-###Gallery
+### Recipes
+
+Here's a broad collection curated recipes. (still work in progress): 
+https://github.com/zeffii/BlenderPythonRecipes/wiki
+
+### Gallery
 
 ![waveform zheight shader][1]
 
